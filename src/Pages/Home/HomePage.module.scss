@@ -1,0 +1,76 @@
+@use '../../assets/styles/base/mixins' as *;
+
+.main {
+  @include flex(unset, unset, column);
+  gap: var(--gutter);
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  .videoContainer {
+    height: calc(50% - (var(--gutter) / 2));
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .textBox {
+      position: absolute;
+      left: 50%;
+      z-index: var(--z-header);
+      transform: translateX(-50%);
+      padding: var(--space-4) var(--space-6);
+      background-color: rgba(0, 123, 193, 0.3);
+
+      h2 {
+        font-size: var(--font-size-4xl);
+        font-weight: var(--font-weight-700);
+        letter-spacing: var(--space-2);
+        color: var(--white-900);
+      }
+
+      .portfolio {
+        letter-spacing: var(--space-4);
+      }
+    }
+
+    .top {
+      bottom: 0;
+    }
+
+    .bottom {
+      top: 0;
+    }
+  }
+
+  .mainFooter {
+    @include flex(unset, unset, column);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: var(--z-header);
+    padding: var(--space-4);
+    padding-top: 0;
+
+    span {
+      width: fit-content;
+      padding: var(--space-1) var(--space-2);
+      color: var(--white-900);
+      background-color: rgba(0, 123, 193, 0.3);
+    }
+  }
+}

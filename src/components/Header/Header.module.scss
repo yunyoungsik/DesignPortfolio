@@ -1,0 +1,50 @@
+@use '../../assets/styles/base/mixins' as *;
+
+.header {
+  @include flex(center, space-between, row);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-header);
+  width: 100%;
+  padding: var(--space-4);
+  padding-bottom: 0;
+
+  h1 {
+    height: 50px;
+    padding: var(--space-2);
+    background-color: rgba(0, 123, 193, 0.3);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  nav {
+    ul {
+      @include flex(center, unset, row);
+      gap: var(--space-2);
+      height: 50px;
+      padding: var(--sapce-4);
+
+      background-color: rgba(0, 123, 193, 0.3);
+
+      li {
+        padding: 0 var(--space-2);
+        a {
+          @include transition-colors;
+          font-size: var(--font-size-base);
+          font-weight: var(--font-weight-500);
+          letter-spacing: var(--space-1);
+          text-decoration: none;
+          color: var(--white-900);
+
+          &:hover {
+            color: var(--grey-300);
+          }
+        }
+      }
+    }
+  }
+}
