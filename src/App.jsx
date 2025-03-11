@@ -4,7 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 // pages
 import HomePage from './Pages/Home/HomePage';
-import Webpage from './Pages/Web/Webpage';
+import SubPage from './Pages/Sub/SubPage';
+import DetailPage from './Pages/Detail/DetailPage';
 
 function App() {
   return (
@@ -13,7 +14,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/web" element={<Webpage />} />
+          <Route path="/sub" element={<SubPage />} />
+
+          {/* 디테일페이지 */}
+          <Route path="/sub/:title" element={<DetailPage />} />
         </Routes>
       </div>
     </>

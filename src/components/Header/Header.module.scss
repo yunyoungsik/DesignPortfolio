@@ -7,13 +7,28 @@
   left: 0;
   z-index: var(--z-header);
   width: 100%;
-  padding: var(--space-4);
+  padding: var(--gutter);
   padding-bottom: 0;
 
+  &.open {
+    align-items: flex-start;
+    background-color: var(--blue-500);
+    height: 100vh;
+
+    h1 {
+      background-color: transparent;
+    }
+  }
+
   h1 {
+    @include transition-colors;
     height: 50px;
     padding: var(--space-2);
     background-color: rgba(0, 123, 193, 0.3);
+
+    &:hover {
+      background-color: var(--blue-300);
+    }
 
     img {
       width: 100%;
@@ -21,17 +36,20 @@
     }
   }
 
-  nav {
+  .nav {
+    position: relative;
+    z-index: var(--z-header);
+
     ul {
       @include flex(center, unset, row);
       gap: var(--space-2);
       height: 50px;
-      padding: var(--sapce-4);
-
+      padding: var(--sapce-4) 0;
       background-color: rgba(0, 123, 193, 0.3);
 
       li {
-        padding: 0 var(--space-2);
+        padding: 0 var(--space-4);
+
         a {
           @include transition-colors;
           font-size: var(--font-size-base);
@@ -41,10 +59,50 @@
           color: var(--white-900);
 
           &:hover {
-            color: var(--grey-300);
+            color: var(--blue-300);
           }
         }
       }
+    }
+
+    @include media('sm') {
+      position: absolute;
+      top: calc(var(--gutter) + 50px);
+      right: var(--gutter);
+      display: none;
+
+      &.open {
+        display: block;
+        width: calc(100% - (var(--gutter) * 2));
+      }
+
+      ul {
+        @include flex(center, center, column);
+        height: calc(100vh - (var(--gutter) * 2 + 50px));
+        background-color: transparent;
+
+        li {
+          a {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-700);
+          }
+        }
+      }
+    }
+  }
+
+  .menuBtn {
+    display: none;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 123, 193, 0.3);
+
+    &.open {
+      background-color: transparent;
+    }
+
+    @include media('sm') {
+      display: block;
     }
   }
 }

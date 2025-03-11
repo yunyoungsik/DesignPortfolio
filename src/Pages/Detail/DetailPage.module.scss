@@ -1,0 +1,20 @@
+@use '../../assets/styles/base/mixins' as *;
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+  .mhon {
+    margin-top: calc(var(--gutter) + 50px);
+  }
+
+  a {
+    position: absolute;
+    top: 1.1%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14vw;
+    height: 3vw;
+  }
+}

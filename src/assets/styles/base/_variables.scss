@@ -116,6 +116,8 @@
   --font-size-2xl: 1.5rem; /* 24px */
   --font-size-3xl: 1.75rem;
   --font-size-4xl: 2rem;
+  --font-size-5xl: 2.125rem;
+  --font-size-6xl: 2.25rem;
   /* Line Heights */
   --line-height-tight: 1.25; /* 제목 */
   --line-height-base: 1.5; /* 본문 */
@@ -169,6 +171,8 @@
   --font-pretendard: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
    Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic',
    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+
+   --font-romantic: 'Romantic', serif;
 
   /* 폰트 셋팅 */
   font-family: var(--font-pretendard);
